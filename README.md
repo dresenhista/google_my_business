@@ -1,19 +1,20 @@
 
-# Pulling Review from Google My Business with Python
+# Pulling Reviews from Google My Business with Python
 
-After stumbling on a few scripts that did not work, I decided it was time to build my own. The context for this project is to pull all the reviews from Google My Business and then analyse which subjects people talk more about my business.
+As a side project at work I wanted to analyze the reasons why our customers (Paybright) give us reviews, either negative or positive.
+After stumbling on a few scripts that did not work, I decided it was time to build my own.
 
 ## But First
-Before we start using the code you need to be allowed to use the API by Google.
-The process is basically:
-1. Create a project in the Google API Console, just like in here: https://developers.google.com/my-business/content/prereqs
-2. Apply for a access and wait, you do need to have an email from the business you are trying to get access. 
-3. Then after you receive the email confirming, you need to extract the files as explained in the link https://developers.google.com/my-business/content/basic-setup
+Before we start pulling data we need to be allowed to use the API by Google.
+The process is simple but long, basically:
+1. Create a project in the Google API Console, just like described in here: https://developers.google.com/my-business/content/prereqs
+2. Apply for an access and wait. In this step you do need to have an email from the business you are trying to get access. 
+3. Then after you receive the email confirming your access, you need to extract the files as explained in this link https://developers.google.com/my-business/content/basic-setup
 
-I am also following the initial instructions provided in this link:
+I am also following the initial instructions provided in this link on how to use python and GMB
 https://developers.google.com/my-business/content/python
 
-Now you have your token file plus the business information file let's pull the data. You will need to import the libraries below, so make sure you have them installed into Jupyter/Python.
+Now that you have your token file plus the business information file let's pull the data. You will need to import the libraries below, so make sure you have them installed into Jupyter/Python.
 
 
 
@@ -34,7 +35,7 @@ import IPython
 discovery_doc = "myBusiness_discovery.json"
 ```
 
-## Now that we started
+## Now that we are ready
 This code will not work on jupyter because of __doc__ and __file__ that are unavailable for, therefore use the sample.py file in this repository.
 
 My business only has one location, therefore I am returning only the first location, if your business has multiple locations, you might change the function below
