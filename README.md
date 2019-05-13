@@ -38,8 +38,9 @@ discovery_doc = "myBusiness_discovery.json"
 ## Now that we are ready
 This code will not work on jupyter because of __doc__ and __file__ that are unavailable for, therefore use the sample.py file in this repository.
 
-My business only has one location, therefore I am returning only the first location, if your business has multiple locations, you might change the function below
 
+The business I am working on only has one location, therefore I am returning only the first location, if your business has multiple locations, you might want to change the function below. Instead of calling 
+locationsList["locations"][0]["name"] you will have multiple items in the list.
 
 ```python
 def location():
@@ -62,7 +63,8 @@ def location():
     return firstLocation  
 ```
 
-There are a few things you can do using the API, I want to pull the reviews for my business which is done using the function below:
+There are a few things you can do using the API, but I want to pull the users reviews for my business.
+Usually Google allows you to pull a page at a time and a page has 200 reviews. The function below allows you to interact through these pages and save all the reviews.:
 
 
 ```python
@@ -135,7 +137,3 @@ def main(argv):
 
 At the end of this project, you should have a reviews.csv file with the json data broken out into columns. 
 
-
-```python
-
-```
