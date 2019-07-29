@@ -73,7 +73,7 @@ def reviews(location):
     # MyBusiness API calls, and authenticate the user so we can access their
     # account
     path  = os.path.abspath('')+'\\'
-    service, flags = sample_tools.init(['sample.py'], "mybusiness", "v4", __doc__, path, scope="https://www.googleapis.com/auth/business.manage", discovery_filename=discovery_doc)
+    service, flags = sample_tools.init(['Google Reviews.ipynb'], "mybusiness", "v4", __doc__, path, scope="https://www.googleapis.com/auth/business.manage", discovery_filename=discovery_doc)
 
     reviewsApi = service.accounts().locations().reviews()
     request = reviewsApi.list(parent=location)
@@ -143,10 +143,3 @@ if __name__ == "__main__":
   main(sys.argv)
 ```
 
-    1531
-    
-
-
-```python
-
-```
