@@ -1,4 +1,4 @@
-import sys	
+import sys  
 import json
 
 from pprint import pprint
@@ -41,17 +41,28 @@ def location():
     # Get the list of locations for the first account in the list
     # print("List of Locations for Account " + firstAccount)
     locationsList = service.accounts().locations().list(parent=firstAccount).execute()
+    locations_all = []
+
+    for each_location in locationsList["locations"]:
+        locations_all.append(each_location["name"]) 
+        
+
+    
     firstLocation = locationsList["locations"][0]["name"]
-    return firstLocation  
+
+    return locations_all  
 
 def reviews(location):
     # Use the discovery doc to build a service that we can use to make
     # MyBusiness API calls, and authenticate the user so we can access their
     # account
     service, flags = sample_tools.init(['sample.py'], "mybusiness", "v4", __doc__, __file__, scope="https://www.googleapis.com/auth/business.manage", discovery_filename=discovery_doc)
-
     reviewsApi = service.accounts().locations().reviews()
-    request = reviewsApi.list(parent=location)
+
+
+    for each_location in location: 
+        print(each_location)
+        request = reviewsApi.list(parent=each_location)
     #reviewsList = request.execute()
     reviews = []
 
